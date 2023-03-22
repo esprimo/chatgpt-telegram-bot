@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./data/mongodb:/data/db
+    # TODO: add auth
+
+  chatgpt_telegram_bot:
+    container_name: chatgpt_telegram_bot
+    restart: always
+    read_only: true
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+    volumes:
+      - ./config:/config:ro

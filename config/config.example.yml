@@ -1,0 +1,8 @@
+# Telegram config
+telegram_token: ""
+telegram_allowed_users: []  # set username strings or user ID integers to allow them to use the bot, for example ["@myusername", 01234678]
+
+# GPT config
+openai_api_key: ""
+chatgpt_engine: "gpt-3.5-turbo"  # ignored unless use_chatgpt_api set to false
+new_dialog_timeout: 600  # new dialog starts after timeout (in seconds)
