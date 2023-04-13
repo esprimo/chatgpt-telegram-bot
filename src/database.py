@@ -100,3 +100,6 @@ class Database:
             {"_id": dialog_id, "user_id": user_id},
             {"$set": {"last_interaction": datetime.now(), "messages": dialog_messages}}
         )
+
+    def delete_all_dialogs(self, user_id: int):
+        self.dialog_collection.delete_many({"user_id": user_id})

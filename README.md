@@ -57,7 +57,7 @@ Differences from the original project as of writing, and reasoning why.
 - Don't allow everyone on Telegram to use the bot
   - Allow specific usernames or user IDs in `allowed_telegram_usernames`. I want to use it myself, and share with friends
 - Don't store chat messages longer than needed
-  - By not storing them in the database longer than `new_dialog_timeout`, there is less for an attacker to steal
+  - By not storing them in the database longer than `new_dialog_timeout` and deleting old messages when a new dialog is started, there is less for an attacker to steal
 - Don't store user information longer than needed
   - By not storing user IDs (and other data) in the database longer than `new_dialog_timeout`, there is less for an attacker to steal. I don't need to track user information because I don't use it commercially
 - Don't store username, first name, and last name
